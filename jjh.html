@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정준호양심참기름 - 제품 상세</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: #1d1d1f;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: #000;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 20px;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .product-title {
+            font-size: 56px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 12px;
+            letter-spacing: -0.003em;
+        }
+
+        .product-subtitle {
+            font-size: 27px;
+            color: #86868b;
+            font-weight: 400;
+            letter-spacing: 0.004em;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 60px;
+            letter-spacing: -0.003em;
+        }
+
+        .section-subtitle {
+            font-size: 21px;
+            color: #86868b;
+            text-align: center;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .product-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin: 120px 0;
+            padding: 0 20px;
+            align-items: center;
+        }
+
+        .product-image {
+            width: 100%;
+            border-radius: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-image:hover {
+            transform: scale(1.02);
+        }
+
+        .product-info {
+            padding: 0;
+        }
+
+        .product-description {
+            margin-bottom: 40px;
+        }
+
+        .product-description h2 {
+            font-size: 40px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: -0.003em;
+        }
+
+        .product-description p {
+            font-size: 21px;
+            color: #515154;
+            line-height: 1.47059;
+            letter-spacing: 0.004em;
+        }
+
+        .product-features {
+            list-style: none;
+            margin: 40px 0;
+        }
+
+        .product-features li {
+            margin-bottom: 20px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 21px;
+            color: #515154;
+        }
+
+        .product-features li:before {
+            content: "•";
+            color: #86868b;
+            position: absolute;
+            left: 0;
+            font-size: 24px;
+        }
+
+        .product-price {
+            font-size: 40px;
+            color: #1d1d1f;
+            margin: 40px 0;
+            font-weight: 600;
+        }
+
+        .buy-button {
+            display: inline-block;
+            padding: 18px 31px;
+            background-color: #0071e3;
+            color: white;
+            text-decoration: none;
+            border-radius: 980px;
+            font-size: 17px;
+            font-weight: 400;
+            letter-spacing: -0.022em;
+            transition: background-color 0.3s;
+        }
+
+        .buy-button:hover {
+            background-color: #0077ED;
+        }
+
+        .product-story {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 120px 0;
+            padding: 0 20px;
+            align-items: center;
+        }
+
+        .story-content {
+            padding: 40px;
+        }
+
+        .story-content h2 {
+            font-size: 40px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: -0.003em;
+        }
+
+        .story-content p {
+            font-size: 21px;
+            color: #515154;
+            line-height: 1.47059;
+            margin-bottom: 20px;
+        }
+
+        .story-image {
+            width: 100%;
+            border-radius: 18px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-lineup {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+            padding: 0 20px;
+        }
+
+        .lineup-item {
+            text-align: center;
+            background-color: #f5f5f7;
+            padding: 40px;
+            border-radius: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .lineup-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .lineup-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .lineup-item h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 8px;
+        }
+
+        .lineup-item p {
+            font-size: 17px;
+            color: #515154;
+        }
+
+        .product-details {
+            margin: 120px 0;
+            padding: 60px 20px;
+            background-color: #f5f5f7;
+            border-radius: 18px;
+        }
+
+        .details-content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .detail-item {
+            padding: 30px;
+            background-color: white;
+            border-radius: 18px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .detail-item h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1d1d1f;
+        }
+
+        .detail-item p {
+            font-size: 17px;
+            color: #515154;
+            line-height: 1.47059;
+        }
+
+        .full-width-image {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            margin: 120px 0;
+        }
+
+        .product-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 120px 0;
+            padding: 0 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 18px;
+            aspect-ratio: 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-specs {
+            background-color: #f5f5f7;
+            padding: 60px 20px;
+            margin: 120px 0;
+            border-radius: 18px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .spec-item {
+            text-align: center;
+            padding: 30px;
+            background-color: white;
+            border-radius: 18px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .spec-item h4 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 10px;
+        }
+
+        .spec-item p {
+            font-size: 17px;
+            color: #515154;
+        }
+
+        @media (max-width: 768px) {
+            .product-content {
+                grid-template-columns: 1fr;
+            }
+
+            .product-lineup {
+                grid-template-columns: 1fr;
+            }
+
+            .details-content {
+                grid-template-columns: 1fr;
+            }
+
+            .product-story {
+                grid-template-columns: 1fr;
+            }
+
+            .product-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-title {
+                font-size: 40px;
+            }
+
+            .product-subtitle {
+                font-size: 21px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="hero-section">
+            <img src="참기름/KakaoTalk_20250508_095106281.jpg" alt="정준호양심참기름" class="hero-image">
+            <div class="hero-content">
+                <h1 class="product-title">정준호양심참기름</h1>
+                <p class="product-subtitle">전통의 맛, 현대의 품격</p>
+            </div>
+        </section>
+
+        <main class="product-content">
+            <div class="product-image-container">
+                <img src="images/200ml-참기름_누끼.jpg" alt="정준호양심참기름" class="product-image">
+            </div>
+
+            <div class="product-info">
+                <div class="product-description">
+                    <h2>전통의 맛을<br>현대적으로</h2>
+                    <p>정준호양심참기름은 전통 방식으로 정성껏 제조된 프리미엄 참기름입니다. 
+                       엄선된 국내산 참깨만을 사용하여 깊은 풍미와 향을 자랑합니다.</p>
+                </div>
+
+                <ul class="product-features">
+                    <li>100% 국내산 참깨 사용</li>
+                    <li>전통 방식으로 제조</li>
+                    <li>첨가물 무첨가</li>
+                    <li>깊은 풍미와 향</li>
+                    <li>영양소 풍부</li>
+                </ul>
+
+                <div class="product-price">
+                    35,000원
+                </div>
+
+                <a href="#" class="buy-button">구매하기</a>
+            </div>
+        </main>
+
+        <section class="product-gallery">
+            <div class="gallery-item">
+                <img src="참기름/KakaoTalk_20250508_095106281_01.jpg" alt="전통 제조 방식">
+            </div>
+            <div class="gallery-item">
+                <img src="참기름/KakaoTalk_20250508_095106281_02.jpg" alt="제품 연출">
+            </div>
+        </section>
+
+        <section class="product-story">
+            <div class="story-content">
+                <h2>정성과<br>전통의 만남</h2>
+                <p>정준호양심참기름은 세대를 이어온 전통 제조 방식을 그대로 이어받아, 
+                   오늘도 정성껏 만들어지고 있습니다. 엄선된 국내산 참깨를 
+                   전통 방식으로 볶아내어 깊은 풍미를 담아냅니다.</p>
+            </div>
+            <img src="참기름/KakaoTalk_20250508_095023367_06.jpg" alt="전통 제조 방식" class="story-image">
+        </section>
+
+        <section class="product-specs">
+            <h2 class="section-title">제품 특징</h2>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <h4>원재료</h4>
+                    <p>국내산 참깨 100%</p>
+                </div>
+                <div class="spec-item">
+                    <h4>용량</h4>
+                    <p>200ml</p>
+                </div>
+                <div class="spec-item">
+                    <h4>보관방법</h4>
+                    <p>직사광선을 피해 서늘한 곳에 보관</p>
+                </div>
+                <div class="spec-item">
+                    <h4>유통기한</h4>
+                    <p>제조일로부터 12개월</p>
+                </div>
+                <div class="spec-item">
+                    <h4>제조방식</h4>
+                    <p>전통 방식 제조</p>
+                </div>
+                <div class="spec-item">
+                    <h4>영양성분</h4>
+                    <p>불포화지방산 풍부</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-showcase">
+            <h2 class="section-title">제품 라인업</h2>
+            <p class="section-subtitle">정준호양심참기름의 다양한 제품을 만나보세요</p>
+            <div class="product-lineup">
+                <div class="lineup-item">
+                    <img src="images/200ml-참깨박_누끼.png" alt="참깨박">
+                    <h3>참깨박</h3>
+                    <p>영양이 풍부한 참깨박</p>
+                </div>
+                <div class="lineup-item">
+                    <img src="images/200ml-싸바리-누끼.png" alt="싸바리">
+                    <h3>싸바리</h3>
+                    <p>전통 방식의 싸바리</p>
+                </div>
+                <div class="lineup-item">
+                    <img src="images/200ml-흑참기름_누끼1.png" alt="흑참기름">
+                    <h3>흑참기름</h3>
+                    <p>깊은 풍미의 흑참기름</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
