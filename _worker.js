@@ -2,8 +2,8 @@ export default {
     async fetch(request, env) {
       // 0) 목적지·UTM 파라미터
       
-      //const dst = 'https://www.instagram.com/thenames_kr/';
-      const dst = 'https://jjhoil.com';
+      const dst = 'https://www.instagram.com/thenames_kr/';
+      //const dst = 'https://jjhoil.com';
       const url = new URL(request.url);
   
       // 1) GA4 Measurement Protocol 이벤트 전송
